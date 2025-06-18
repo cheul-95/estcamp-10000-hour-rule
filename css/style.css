@@ -1,3 +1,34 @@
+@font-face {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 400;
+    src:
+        url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2")
+            format("woff2"),
+        url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff")
+            format("woff"),
+        url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf")
+            format("opentype");
+}
+@font-face {
+    font-family: 'OTEnjoystoriesBA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --preferred-font12-vw: calc((12 / 1440) * 100vw);
+    --preferred-font18-vw: calc((18 / 1440) * 100vw);
+    --preferred-font24-vw: calc((24 / 1440) * 100vw);
+    --preferred-font36-vw: calc((36 / 1440) * 100vw);
+    --preferred-font72-vw: calc((72 / 1440) * 100vw);
+}
 .sr-only {
     position: absolute;
     width: 1px;
@@ -8,4 +39,395 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+body{
+    font-size: 10px;
+    font-family: 'GmarketSansMedium';
+    line-height: 100%;
+    background: #5B2386;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main{
+    width: 100%;
+}
+/* 헤더 영역 START */
+header{
+    margin-top: 120px;
+}
+header img{
+    width: 100%;
+    max-width: 564px;
+}
+/* quote--primary 영역*/
+.quote--primary{
+    width: 100%;
+    height: 40px;
+    margin-top: 52px;
+    text-align: center;
+}
+.quote--primary .quote__text{
+    font-family: 'OTEnjoystoriesBA';
+    font-size: clamp(22px, var(--preferred-font36-vw) , 36px);
+    font-weight: 700;
+    color: #F5DF4D;
+}
+/* quote--secondary 영역*/
+.quote--secondary{
+    margin-top: 80px;
+}
+.quote__box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 18px;
+    font-size: clamp(14px, var(--preferred-font18-vw), 18px);
+    line-height: calc(100% + 13px);
+    color: #FFFFFF;
+    text-align: center;
+}
+.quote__box strong{
+    font-weight: 700;
+    font-size: 24px;
+    font-size: clamp(14px, var(--preferred-font24-vw), 24px);
+}
+.quote__box img:first-child{
+    width: 36px;
+    height: 32px;
+    margin-right: 20px;
+}
+.quote__box img:last-child{
+    width: 36px;
+    height: 32px;
+    margin-left: 20px;
+}
+/* input 영역 */
+.input{
+    margin-top: 100px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.input .input__group{
+    display: block;
+    margin-bottom: 20px;
+    font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
+}
+.input .input__group input{
+    width: 228px;
+    font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
+    font-family: 'GmarketSansMedium';
+    height: calc(24px + 16px + 16px);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 16px 40px 16px;
+    margin: 0px 20px;
+}
+.input .input__group input::placeholder {
+    color: #BABCBE;
+    text-align: center;
+}
+.input__submit-wrap {
+    position: relative;
+}
+.input form .input__submit-wrap > button{
+    margin-top: 120px;
+    max-width: 567px;
+    height: 64px;
+    border-radius: 12px;
+    padding: 20px 50px;
+    background: #FCEE21;
+    font-family: 'GmarketSansMedium';
+    font-weight: 700;
+    font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #5B2386;
+    border: none;
+}
+.input__submit-wrap::after {
+    content: "";
+    position: absolute;
+    top:134px;
+    width: 64px;
+    height: 72px;
+    margin-left: 7px;
+    background: url("../img/Frame 21.png") no-repeat center / cover;
+}
+/* result 영역 */
+.result{
+    margin-top: 142px;
+}
+.result__text{
+    font-family: 'GmarketSansMedium',  sans-serif;
+    font-size: clamp(12px,var(--preferred-font24-vw), 24px);
+    font-weight: 400;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.2;
+}
+.result__text strong{
+    display: inline-flex;
+    align-items: center;
+    font-size: clamp(24px,var(--preferred-font72-vw),72px );
+    font-weight: 700;
+    vertical-align: -webkit-baseline-middle;
+    margin: 0 12px;
+}
+.button-group{
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+}
+.button-group button:nth-child(1){
+    background: #FCEE21;
+    box-shadow: 2px 4px 10px 0px #00000026;
+    max-width: 365px;
+    height: 64px;
+    border-radius: 12px;
+    padding : 20px 50px;
+    margin-right: 12px; 
+    font-family: 'GmarketSansMedium',  sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px,var(--preferred-font24-vw),24px);
+    line-height: 100%;
+    text-align: center;
+    vertical-align: -webkit-baseline-middle;
+    color: #5B2386;
+}
+.button-group button:nth-child(2){
+    background: #FFFFFF;
+    box-shadow: 2px 4px 10px 0px #00000026;
+    max-width: 193px;
+    height: 64px;
+    border-radius: 12px;
+    padding : 20px 50px;
+    font-family: 'GmarketSansMedium',  sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px,var(--preferred-font24-vw),24px);
+    line-height: 100%;
+    text-align: center;
+    vertical-align: -webkit-baseline-middle;
+    color: #5B2386;
+}
+/* footer 영역 */
+.footer__inner{
+    margin-top: 120px;
+    margin-bottom: 106px;
+    text-align: center;
+}
+
+.footer__inner img{
+    width: 100%;
+    max-width: 168px;
+}
+.footer__desc{
+    display: block;
+    margin-top: 20px;
+    font-family: "Noto Sans KR";
+    font-weight: 400;
+    font-size:  clamp(9px ,var(--preferred-font12-vw),12px);
+    line-height: 120%;
+    color: #FFFFFF;
+}
+/* dialog 영역 */
+dialog {
+    display: none;
+    position: absolute;
+    top:100px;
+    left:calc(50% - 400px);
+    width: 800px;
+    height: 816px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 30px 0 #00000026;
+    border: none;
+    color: #5b2386;
+}
+.dialog__inner{
+    position:relative;
+    padding: 80px 146px;
+    font-family: "OTEnjoystoriesBA", sans-serif;
+    text-align: center;
+}
+dialog div{
+    height: 106px;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 100%;
+}
+dialog p {
+    height:40px ;
+    margin-top: 4px;
+    font-weight: 700;
+    font-size: 36px;
+} 
+dialog img {
+    width: 438px;
+    height: 342px;
+    margin-top: 40px;
+} 
+dialog button {
+    width: 508px;
+    height: 64px;
+    border-radius: 12px;
+    margin-top: 60px;
+    background-color: #fcee21;
+    font-family: 'GmarketSansMedium',  sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #5b2386;
+    box-shadow: 2px 4px 10px 0 #00000026;
+}
+@media screen and (max-width : 360px) {
+    .quote__box img:last-child, .quote__box img:first-child{
+        width: 20px;
+        height: 18px;
+        margin: 5px;
+    }
+    .quote--primary .quote__text{
+            max-width: 297px;
+    }
+    .footer__inner img {
+            max-width: 125px;
+    }
+}
+@media screen and (max-width : 720px){
+    .header{
+        margin: 41px 40px;
+    }
+    .quote__box{
+        margin: 0px 15px;
+    }
+    .quote--primary{
+        margin-top: 32px;
+    }
+    .quote--secondary{
+        margin-top: 32px;
+    }
+    .input{
+        margin-top: 60px;
+        margin: 32px 15px;
+    }
+    .input .input__group span{
+        display: inline-flex;
+        vertical-align: bottom;
+        align-items: center;
+        height: calc(14px + 12px + 12px);
+    }
+    .input .input__group input{
+        border-radius: 8px;
+        width: 156px;
+        height: calc(14px + 12px + 12px);
+        padding : 12px 40px;
+        margin: 0 8px;
+    }
+    .input form .input__submit-wrap > button{
+        margin-top: 80px;
+        width: 240px;
+        height: 72px;
+        font-weight: 700;
+        line-height: 120%;
+        text-align: center;
+        gap: 10px;
+        border-radius: 12px;
+    }
+    .input__submit-wrap::after {
+        width: 43px;
+        height: 48px;
+        top:120px
+    }
+    .result{
+        margin-top: 68px;
+    }
+    .button-group{
+        margin-top: 52px;
+    }
+    .button-group button:nth-child(1){
+        max-width: 203px;
+        height: 46px;
+        border-radius: 12px;
+        padding-top: 16px;
+        padding-right: 24px;
+        padding-bottom: 16px;
+        padding-left: 24px;
+        font-weight: 700;
+        line-height: 100%;
+        text-align: center;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+    .button-group button:nth-child(2){
+        max-width: 102px;
+        height: 46px;
+        gap: 10px;
+        border-radius: 12px;
+        font-weight: 700;
+        padding-top: 16px;
+        padding-right: 24px;
+        padding-bottom: 16px;
+        padding-left: 24px;
+
+    }
+    .footer__inner{
+        margin-top : 60px
+    } 
+    .footer__desc{
+        margin-top : 12px
+    }
+    dialog {
+        
+        top:50px;
+        left: calc(50% - 165px);
+        width: 330px;
+        height: 500px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 30px 0 #00000026;
+        border: none;
+        color: #5b2386;
+    }
+    .dialog__inner{
+        display: flex;
+        flex-direction: column;
+        padding: 40px 45px;
+    }
+    .dialog__inner div span {
+        display: none;
+    }
+    .dialog__inner div {
+        width: 240px;
+        height: 70px;
+        font-family: "OTEnjoystoriesBA", sans-serif;
+        font-weight: 700;
+        font-size: 64px;
+    }
+    .dialog__inner p {
+        font-family: "OTEnjoystoriesBA", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 100%;
+    }
+    dialog img {
+        width: 240px;
+        height: 188px;
+        margin-top: 24px;
+    }
+    dialog button {
+        font-family: "GmarketSansBold", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        background-color: #fcee21;
+        width: 240px;
+        height: 72px;
+        border-radius: 12px;
+        margin-top: 24px;
+        box-shadow: 2px 4px 10px 0 #00000026;
+        padding: 20px 44.5px;
+    }
+    dialog button span {
+        display: block;
+    }
 }
