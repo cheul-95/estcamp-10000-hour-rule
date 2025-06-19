@@ -14,28 +14,31 @@
     <body>
 
         <header class="header">
-            <a href="./" aria-label="1만 시간의 법칙 메인 페이지로 이동">
-                <h1 class="header__logo">
-                    <img src="./img/title.png" alt="1만 시간의 법칙 로고">
-                </h1>
-            </a>
+            <h1 class="header__logo">
+                <a href="./" aria-label="1만 시간의 법칙 메인 페이지로 이동">
+                    <picture>
+                        <source media="(min-width:720px)" srcset="./img/title.png">
+                        <img src="./img/title-mobile.png" alt="1만 시간의 법칙 로고">
+                    </picture>
+                </a>
+            </h1>
         </header>
         <main class="main">
             <section class="quote quote--primary">
                 <h2 class="sr-only">명언</h2>
-                <q class="quote__text">
+                <blockquote  class="quote__text">
                     "연습은 어제의 당신보다 당신을 더 낫게 만든다."
-                </q>
+                </blockquote>
             </section>
             <section class="quote quote--secondary">
                 <h2 class="sr-only">1만 시간의 법칙 소개</h2>
                 <div class="quote__box">
                     <img src="./img/“.png" alt="" aria-hidden="true" class="quote__mark">
-                    <q class="quote__content">
+                    <blockquote  class="quote__content">
                             <strong>1만 시간의 법칙</strong>은 <br>
                             어떤 분야의 전문가가 되기 위해서는<br>
                             최소한 1만 시간의 훈련이 필요하다는 법칙이다.
-                    </q>
+                    </blockquote>
                     <img src="./img/”.png" alt="" aria-hidden="true" class="quote__mark">
                 </div>
             </section>
@@ -53,7 +56,7 @@
                         <div class="input__group">
                             <span>그래서 앞으로 매일 하루에</span>
                             <label for="time" class="sr-only">하루 훈련 시간</label>
-                            <input id="time" name="time" type="text" class="input__field" placeholder="예)5시간" required >
+                            <input id="time" name="time" type="number" min="1" class="input__field" placeholder="예)5시간" required >
                             <span>시간씩 훈련할 것이다.</span>
                         </div>
                     </fieldset>
@@ -70,16 +73,19 @@
                 당신은 <strong>프로그래밍</strong> 전문가가 되기 위해서 <br>
                 대략 <strong>5110</strong>일 이상 훈련하셔야 합니다! :)
                 </p>
-                <div class="button-group">
-                    <button type="button" class="button-group__btn button-group__btn--primary" aria-label="훈련페이지로 이동">훈련하러 가기 GO! GO!</button>
-                    <button type="button" class="button-group__btn button-group__btn--secondary" aria-label="결과값 공유하기">공유하기</button>
+                <div class="result__buttons">
+                    <button type="button" class="result__button  result__button--primary" aria-label="훈련페이지로 이동">훈련하러 가기 GO! GO!</button>
+                    <button type="button" class="result__button  result__button--secondary" aria-label="결과값 공유하기">공유하기</button>
                 </div>
             </section>
         </main>
         <footer class="footer">
             <div class="footer__inner">
                 <a href="./" aria-label="1만 시간의 법칙 메인 페이지로 이동">
-                    <img src="./img/logo-m.png" alt="1만 시간의 법칙 하단 로고" class="footer__logo">
+                    <picture>
+                        <source media="(min-width:720px)" srcset="./img/logo-pc.png">
+                        <img src="./img/logo-m.png" alt="1만 시간의 법칙 하단 로고" class="footer__logo">
+                    </picture>
                 </a>
                 <small class="footer__desc">
                     본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 위니브에 있습니다.<br>
@@ -87,9 +93,9 @@
                 </small>
             </div>
         </footer>
-    <dialog open="">
-        <div class="dialog__inner">
-            <h2 class="dialog__title sr-only">응원 모달창</h2>
+    <dialog class="modal" open="">
+        <div class="modal__inner">
+            <h2 class="modal__title sr-only">응원 모달창</h2>
             <div>화이팅!! <span>♥♥♥</span></div>
             <p>당신의 꿈을 응원합니다!</p>
             <img src="./img/라이캣-img.png" alt="">

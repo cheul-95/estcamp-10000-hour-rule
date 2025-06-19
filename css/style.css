@@ -17,9 +17,15 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
+    font-family: 'GmarketSans';
+    src: url('../font/GmarketSansTTFMedium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    src: url('../font/GmarketSansTTFBold.ttf') format('truetype');
+    font-weight: 500;
     font-style: normal;
 }
 :root {
@@ -42,7 +48,6 @@
 }
 body{
     font-size: 10px;
-    font-family: 'GmarketSansMedium';
     line-height: 100%;
     background: #5B2386;
     display: flex;
@@ -85,14 +90,20 @@ header img{
     font-weight: 400;
     font-size: 18px;
     font-size: clamp(14px, var(--preferred-font18-vw), 18px);
+    font-family: 'GmarketSans',sans-serif;
     line-height: calc(100% + 13px);
     color: #FFFFFF;
     text-align: center;
+    
 }
 .quote__box strong{
-    font-weight: 700;
-    font-size: 24px;
+    font-weight: 500;
     font-size: clamp(14px, var(--preferred-font24-vw), 24px);
+    font-family: 'GmarketSans',sans-serif;
+}
+.quote__box .quote__content{
+    font-weight: 400;
+     font-family: 'GmarketSans',sans-serif;
 }
 .quote__box img:first-child{
     width: 36px;
@@ -114,11 +125,14 @@ header img{
     display: block;
     margin-bottom: 20px;
     font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
+    font-family: 'GmarketSans',sans-serif;
+    font-weight: 400;
 }
 .input .input__group input{
     width: 228px;
     font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
-    font-family: 'GmarketSansMedium';
+    font-family: 'GmarketSans',sans-serif;
+    font-weight: 400;
     height: calc(24px + 16px + 16px);
     border-radius: 8px;
     border: none;
@@ -140,8 +154,8 @@ header img{
     border-radius: 12px;
     padding: 20px 50px;
     background: #FCEE21;
-    font-family: 'GmarketSansMedium';
-    font-weight: 700;
+    font-family: 'GmarketSans',sans-serif;
+    font-weight: 500;
     font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
     line-height: 100%;
     text-align: center;
@@ -163,7 +177,7 @@ header img{
     margin-top: 142px;
 }
 .result__text{
-    font-family: 'GmarketSansMedium',  sans-serif;
+    font-family: 'GmarketSans',sans-serif;
     font-size: clamp(12px,var(--preferred-font24-vw), 24px);
     font-weight: 400;
     color: #FFFFFF;
@@ -174,16 +188,16 @@ header img{
     display: inline-flex;
     align-items: center;
     font-size: clamp(24px,var(--preferred-font72-vw),72px );
-    font-weight: 700;
+    font-weight: 500;
     vertical-align: -webkit-baseline-middle;
     margin: 0 12px;
 }
-.button-group{
+.result__buttons{
     margin-top: 120px;
     display: flex;
     justify-content: center;
 }
-.button-group button:nth-child(1){
+.result__buttons button:nth-child(1){
     background: #FCEE21;
     box-shadow: 2px 4px 10px 0px #00000026;
     max-width: 365px;
@@ -191,23 +205,23 @@ header img{
     border-radius: 12px;
     padding : 20px 50px;
     margin-right: 12px; 
-    font-family: 'GmarketSansMedium',  sans-serif;
-    font-weight: 700;
+    font-family: 'GmarketSans',sans-serif;
+    font-weight: 500;
     font-size: clamp(14px,var(--preferred-font24-vw),24px);
     line-height: 100%;
     text-align: center;
     vertical-align: -webkit-baseline-middle;
     color: #5B2386;
 }
-.button-group button:nth-child(2){
+.result__buttons button:nth-child(2){
     background: #FFFFFF;
     box-shadow: 2px 4px 10px 0px #00000026;
     max-width: 193px;
     height: 64px;
     border-radius: 12px;
     padding : 20px 50px;
-    font-family: 'GmarketSansMedium',  sans-serif;
-    font-weight: 700;
+    font-family: 'GmarketSans',sans-serif;
+    font-weight: 500;
     font-size: clamp(14px,var(--preferred-font24-vw),24px);
     line-height: 100%;
     text-align: center;
@@ -221,21 +235,17 @@ header img{
     text-align: center;
 }
 
-.footer__inner img{
-    width: 100%;
-    max-width: 168px;
-}
 .footer__desc{
     display: block;
     margin-top: 20px;
     font-family: "Noto Sans KR";
     font-weight: 400;
     font-size:  clamp(9px ,var(--preferred-font12-vw),12px);
-    line-height: 120%;
+    line-height: 150%;
     color: #FFFFFF;
 }
 /* dialog 영역 */
-dialog {
+.modal {
     display: none;
     position: absolute;
     top:100px;
@@ -247,52 +257,45 @@ dialog {
     border: none;
     color: #5b2386;
 }
-.dialog__inner{
+.modal__inner{
     position:relative;
     padding: 80px 146px;
     font-family: "OTEnjoystoriesBA", sans-serif;
     text-align: center;
 }
-dialog div{
+.modal div{
     height: 106px;
     font-weight: 700;
     font-size: 96px;
     line-height: 100%;
 }
-dialog p {
+.modal p {
     height:40px ;
     margin-top: 4px;
     font-weight: 700;
     font-size: 36px;
 } 
-dialog img {
+.modal img {
     width: 438px;
     height: 342px;
     margin-top: 40px;
 } 
-dialog button {
+.modal button {
     width: 508px;
     height: 64px;
     border-radius: 12px;
     margin-top: 60px;
     background-color: #fcee21;
-    font-family: 'GmarketSansMedium',  sans-serif;
-    font-weight: 700;
+    font-family: 'GmarketSans',sans-serif;
+    font-weight: 500;
     font-size: 24px;
     color: #5b2386;
     box-shadow: 2px 4px 10px 0 #00000026;
 }
 @media screen and (max-width : 360px) {
-    .quote__box img:last-child, .quote__box img:first-child{
-        width: 20px;
-        height: 18px;
-        margin: 5px;
-    }
+    
     .quote--primary .quote__text{
-            max-width: 297px;
-    }
-    .footer__inner img {
-            max-width: 125px;
+            max-width: 360px;
     }
 }
 @media screen and (max-width : 720px){
@@ -340,13 +343,18 @@ dialog button {
         height: 48px;
         top:120px
     }
+    .quote__box img:last-child, .quote__box img:first-child{
+        width: 20px;
+        height: 18px;
+        margin: 5px;
+    }
     .result{
         margin-top: 68px;
     }
-    .button-group{
+    .result__buttons{
         margin-top: 52px;
     }
-    .button-group button:nth-child(1){
+    .result__buttons button:nth-child(1){
         max-width: 203px;
         height: 46px;
         border-radius: 12px;
@@ -360,7 +368,7 @@ dialog button {
         vertical-align: middle;
         margin-right: 8px;
     }
-    .button-group button:nth-child(2){
+    .result__buttons button:nth-child(2){
         max-width: 102px;
         height: 46px;
         gap: 10px;
@@ -378,7 +386,7 @@ dialog button {
     .footer__desc{
         margin-top : 12px
     }
-    dialog {
+    .modal {
         
         top:50px;
         left: calc(50% - 165px);
@@ -389,35 +397,35 @@ dialog button {
         border: none;
         color: #5b2386;
     }
-    .dialog__inner{
+    .modal__inner{
         display: flex;
         flex-direction: column;
         padding: 40px 45px;
     }
-    .dialog__inner div span {
+    .modal__inner div span {
         display: none;
     }
-    .dialog__inner div {
+    .modal__inner div {
         width: 240px;
         height: 70px;
         font-family: "OTEnjoystoriesBA", sans-serif;
         font-weight: 700;
         font-size: 64px;
     }
-    .dialog__inner p {
+    .modal__inner p {
         font-family: "OTEnjoystoriesBA", sans-serif;
         font-weight: 700;
         font-size: 36px;
         line-height: 100%;
     }
-    dialog img {
+    .modal img {
         width: 240px;
         height: 188px;
         margin-top: 24px;
     }
-    dialog button {
-        font-family: "GmarketSansBold", sans-serif;
-        font-weight: 700;
+    .modal button {
+        font-family: 'GmarketSans',sans-serif;
+        font-weight: 500;
         font-size: 14px;
         background-color: #fcee21;
         width: 240px;
@@ -427,7 +435,7 @@ dialog button {
         box-shadow: 2px 4px 10px 0 #00000026;
         padding: 20px 44.5px;
     }
-    dialog button span {
+    .modal button span {
         display: block;
     }
 }
