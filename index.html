@@ -88,7 +88,7 @@
                 </small>
             </div>
         </footer>
-    <dialog class="modal" open="">
+    <dialog class="modal">
         <div class="modal__inner">
             <h2 class="modal__title sr-only">응원 모달창</h2>
             <div>화이팅!! <span>♥♥♥</span></div>
@@ -97,5 +97,12 @@
             <button type="button" aria-label="훈련페이지로 이동">종료하고 진짜 훈련하러 가기 GO!GO!</button>
         </div>
     </dialog>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".result__button--primary").addEventListener("click",function () {
+                document.querySelector(".modal").showModal();
+            });
+        });
+    </script>
     </body>
 </html>
