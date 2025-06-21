@@ -12,8 +12,7 @@
 ---
 ## 🧩 기술 스택
 
-- HTML5 + CSS3 
-- Web Font 적용 
+- HTML5 + CSS3 + JS
 
 ---
 ## 📸 화면 구성 미리보기
@@ -92,7 +91,7 @@ estcamp-10000-hour-rule/
 
 ## 📌 주요 특징
 
-✅ 순수 HTML + CSS 
+✅ HTML + CSS + JS 
 
 ✅ 다이얼로그(모달) 기능
 
