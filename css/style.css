@@ -281,6 +281,7 @@ header img{
     color: #5b2386;
     justify-content: center;
     display: flex;
+    display: none;
 }
 .modal__inner{
     position:relative;
