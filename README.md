@@ -99,9 +99,10 @@ estcamp-10000-hour-rule/
   - type="number" min="1" 속성을 넣어 최소값 1이상을 넣게 유도
 
 ✅ 반응형 디자인
-  - Desktop: max-width: 1320px
+  - Desktop: max-width: 1280px
   - Mobile: max-width: 720px
   - picture , source 태그를 활용한 이미지 최적화
+  - clamp( 최솟값 , calc((최댓값 / 화면크기) * 100vw),최댓값) 폰트 사이즈 최적화
     
 ✅ 검색엔진 최적화(SEO)
   - meta 태그: description, keywords, author 설정
