@@ -72,7 +72,7 @@ estcamp-10000-hour-rule/
     <tr>
       <td><code>&lt;form&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;label&gt;</code></td>
       <td>사용자 입력 폼 구성</td>
-      <td>웹 접근성 향상 (a11y)</td>
+      <td>웹 접근성 향상 </td>
     </tr>
     <tr>
       <td><code>&lt;picture&gt;</code>, <code>&lt;source&gt;</code></td>
