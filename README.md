@@ -3,18 +3,20 @@
 > **"연습은 어제의 당신보다 당신을 더 낫게 만든다."**  
 > 하루 훈련 시간을 입력하면 1만 시간을 채우기 위해 필요한 일수를 계산해주는 랜딩 페이지입니다.
 
-
 ---
+
 ## 🖥️ 데모
 
 [👉 데모 페이지 보러가기](https://cheul-95.github.io/estcamp-10000-hour-rule/)  
 
 ---
+
 ## 🧩 기술 스택
 
 - HTML5 + CSS3 + JS
 
 ---
+
 ## 📸 화면 구성 미리보기
 
 <table align="center">
@@ -33,6 +35,7 @@
 </table>
 
 ---
+
 ## 📁 프로젝트 구조
 
 ```
@@ -47,6 +50,7 @@ estcamp-10000-hour-rule/
 ```
 
 ---
+
 ## 🔍 시맨틱 마크업 구조 및 특징
 
 <table>
@@ -69,9 +73,14 @@ estcamp-10000-hour-rule/
       <td>정보 블록 논리적 구획</td>
     </tr>
     <tr>
-      <td><code>&lt;form&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;label&gt;</code></td>
-      <td>사용자 입력 폼 구성</td>
-      <td>웹 접근성 향상 </td>
+      <td><code>&lt;blockquote&gt;</code></td>
+      <td>인용문 처리</td>
+      <td>의미성과 가독성이 향상</td>
+    </tr>
+    <tr>
+      <td><code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code></td>
+      <td>시간 입력 그룹 구분</td>
+      <td>확장성을 고려한 (ex > 1주일의 학습 시간) 그룹화</td>
     </tr>
     <tr>
       <td><code>&lt;picture&gt;</code>, <code>&lt;source&gt;</code></td>
@@ -79,13 +88,17 @@ estcamp-10000-hour-rule/
       <td>다양한 해상도 대응</td>
     </tr>
     <tr>
-      <td><code>&lt;strong&gt;</code>, <code>&lt;blockquote&gt;</code></td>
-      <td>강조 문구 처리</td>
-      <td>정보 위계 명확화</td>
+      <td><code>&lt;clamp&gt;</code></td>
+      <td>clamp( 최솟값 , calc((최댓값 / 화면크기) * 100vw),최댓값)</td>
+      <td>반응형 폰트 사이즈 대응</td>
     </tr>
-  </tbody>
+    <tr>
+      <td><code>&lt;small&gt;</code></td>
+      <td>부가적인 법적 안내</td>
+      <td>부가적인 설명임을 명확히 표현</td>
+    </tr>
+    </tbody>
 </table>
-
 
 ---
 
@@ -98,8 +111,6 @@ estcamp-10000-hour-rule/
 ✅ 반응형 디자인
   - Desktop: max-width: 1280px
   - Mobile: max-width: 720px
-  - picture , source 태그를 활용한 이미지 최적화
-  - clamp( 최솟값 , calc((최댓값 / 화면크기) * 100vw),최댓값) 폰트 사이즈 최적화
     
 ✅ 검색엔진 최적화(SEO)
   - meta 태그: description, keywords, author 설정
@@ -118,6 +129,7 @@ estcamp-10000-hour-rule/
 - 5시간 부분에 숫자만 입력되게 할 것 같습니다. ( 반영 완료 )
 
 ---
+
 ## 🙋‍♀️ 제작자
 
 - SC LEE  
