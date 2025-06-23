@@ -113,7 +113,7 @@ estcamp-10000-hour-rule/
   - Mobile: max-width: 720px
     
 ✅ 접근성 향상 요소
-  - label, aria-label, alt, aria-hidden 등을 적절히 활용
+  - label, aria-label, alt 등을 적절히 활용
   
 ✅ 검색엔진 최적화(SEO)
   - meta 태그: description, keywords, author 설정
