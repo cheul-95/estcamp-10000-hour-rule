@@ -79,8 +79,8 @@ estcamp-10000-hour-rule/
     </tr>
     <tr>
       <td><code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code></td>
-      <td>시간 입력 그룹 구분</td>
-      <td>확장성을 고려한 (ex > 1주일의 학습 시간) 그룹화</td>
+      <td>입력 그룹 구분</td>
+      <td>확장성을 고려한 그룹화</td>
     </tr>
     <tr>
       <td><code>&lt;picture&gt;</code>, <code>&lt;source&gt;</code></td>
@@ -112,6 +112,9 @@ estcamp-10000-hour-rule/
   - Desktop: max-width: 1280px
   - Mobile: max-width: 720px
     
+✅ 접근성 향상 요소
+  - label, aria-label, alt, aria-hidden 등을 적절히 활용
+  
 ✅ 검색엔진 최적화(SEO)
   - meta 태그: description, keywords, author 설정
 
