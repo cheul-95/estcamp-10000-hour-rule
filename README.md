@@ -95,9 +95,6 @@ estcamp-10000-hour-rule/
 
 ✅ 다이얼로그(모달) 기능
 
-✅ 시간 입력 input 태그  
-  - type="number" min="1" 속성을 넣어 최소값 1이상을 넣게 유도
-
 ✅ 반응형 디자인
   - Desktop: max-width: 1280px
   - Mobile: max-width: 720px
