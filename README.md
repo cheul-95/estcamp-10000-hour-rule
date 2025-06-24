@@ -83,10 +83,9 @@ estcamp-10000-hour-rule/
   
 ✅ 검색엔진 최적화(SEO)
   - meta 태그: description, keywords, author 설정
->>>>>>> 742e1e96a013d35e778c6cbf886baec0108663a7
 
-웹 접근성 이론을 어느 정도 학습한 후 시작했지만, 실제 코드에 어떻게 반영해야 할지는 여전히 고민이 많았습니다.  
-`aria-*`, `role`, 시맨틱 태그의 올바른 사용을 위해 [MDN 문서](https://developer.mozilla.org/ko/)와 AI의 도움을 함께 참고하였습니다.
+  - 웹 접근성 이론을 어느 정도 학습한 후 시작했지만, 실제 코드에 어떻게 반영해야 할지는 여전히 고민이 많았습니다.  
+    `aria-*`, `role`, 시맨틱 태그의 올바른 사용을 위해 [MDN 문서](https://developer.mozilla.org/ko/)와 AI의 도움을 함께 참고하였습니다.
 
 ---
 
