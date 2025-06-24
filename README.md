@@ -73,17 +73,6 @@ estcamp-10000-hour-rule/
 초반에는 어떤 네이밍이 적절할지 고민이 많았지만, 익숙해질수록 클래스 이름만 보고도 구조를 파악할 수 있어 가독성과 유지보수에 큰 도움이 되었습니다.
 
 ✅ 웹 접근성 고려
-
-✅ 반응형 디자인
-  - Desktop: max-width: 1280px
-  - Mobile: max-width: 720px
-    
-✅ 접근성 향상 요소
-  - label, aria-label, alt 등을 적절히 활용
-  
-✅ 검색엔진 최적화(SEO)
-  - meta 태그: description, keywords, author 설정
-
   - 웹 접근성 이론을 어느 정도 학습한 후 시작했지만, 실제 코드에 어떻게 반영해야 할지는 여전히 고민이 많았습니다.  
     `aria-*`, `role`, 시맨틱 태그의 올바른 사용을 위해 [MDN 문서](https://developer.mozilla.org/ko/)와 AI의 도움을 함께 참고하였습니다.
 
@@ -91,10 +80,9 @@ estcamp-10000-hour-rule/
 
 ## 📝 피드백 반영 사항
 
-- `img` 태그의 `alt` 속성: 로고일 경우 `alt=""`로 처리하여 스크린리더에서 제외
 - 장식용 이미지는 `background`나 `::before` 가상 요소로 처리
 - `dialog` 요소의 `max-width`, 내부 여백 조정으로 모달 시각적 개선
-- 입력창은 `type="number"` 속성을 통해 숫자만 입력 가능하도록 설정
+- 시간 입력창은 `type="number"` 속성을 통해 숫자만 입력 가능하도록 설정
 
 ---
 

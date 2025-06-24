@@ -56,7 +56,7 @@
             </section>
             <section class="input">
                 <h2 class="sr-only">1만 시간 계산 입력</h2>
-                <form action="/estcamp-10000-hour-rule/" method="get" class="input__form" >
+                <form action="./" method="get" class="input__form" >
                     <fieldset class="input__fieldset">
                         <legend class="sr-only">전문가가 되기 위한 훈련 시간 입력</legend>
                         <div class="input__group">
@@ -107,42 +107,60 @@
             <h2 class="modal__title sr-only">응원 모달창</h2>
             <div>화이팅!! <span>♥♥♥</span></div>
             <p>당신의 꿈을 응원합니다!</p>
-            <img src="./img/licat-img.png" alt="">
+            <img src="./img/licat-img.png" alt="응원하는 캐릭터 리캣 이미지">
             <a class="button-style" href="https://www.inflearn.com/" aria-label="훈련페이지로 이동">종료하고 진짜 훈련하러 가기 GO!GO!</a>
         </div>
     </dialog>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const params = new URLSearchParams(window.location.search);
-            const job = params.get('job');   
-            const time = params.get('time'); 
-            
-            // 입력값 유효성 검사
-            if(job.trim() === ""){
-                alert("어떤 전문가가 되고 싶은지 입력하세요");
-            }else if (isNaN(time) || time <= 0){
-                alert("하루 학습 시간을 입력하세요");
-            } else {
-                document.querySelector(".job-value").textContent=job;
-                document.querySelector(".time-value").textContent=10000/time;
-                document.querySelector(".result").style.display="flex";
-                document.getElementById('result').scrollIntoView({
-                    behavior: 'smooth',  // 부드럽게 이동
-                    block: 'start'       // 요소의 시작 지점이 보이도록 정렬
-                });
+        const params = new URLSearchParams(window.location.search);
+        const job = params.get('job');   
+        const time = params.get('time'); 
+
+        if (job && job.trim() !== "" && time && !isNaN(time) && time > 0) {
+            document.querySelector(".job-value").textContent = job;
+            document.querySelector(".time-value").textContent = Math.ceil(10000 / time);
+            document.querySelector(".result").style.display = "flex";
+            document.getElementById("result").scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        document.querySelector(".result__button--primary").addEventListener("click", function () {
+            document.querySelector(".modal").style.display = 'flex';
+            document.querySelector(".modal").showModal();
+        });
+
+        document.querySelector(".result__button--secondary").addEventListener("click", () => {
+            navigator.clipboard.writeText(location.href).then(() => {
+                alert('링크가 복사되었습니다!');
+            }).catch(err => {
+                console.error('복사 실패:', err);
+            });
+        });
+
+        document.querySelector(".input__form").addEventListener("submit", function (e) {
+            const jobInput = document.getElementById("job");
+            const timeInput = document.getElementById("time");
+
+            const job = jobInput.value.trim();
+            const time = Number(timeInput.value);
+
+            if (!job) {
+                alert("어떤 전문가가 되고 싶은지 입력하세요.");
+                jobInput.focus();
+                e.preventDefault();
+                return;
             }
-            document.querySelector(".result__button--primary").addEventListener("click",function () {
-                document.querySelector(".modal").style.display = 'flex';
-                document.querySelector(".modal").showModal();
-            });
-            document.querySelector(".result__button--secondary").addEventListener("click",() => {
-                navigator.clipboard.writeText(location.href).then(() => {
-                    alert('링크가 복사되었습니다!');
-                }).catch(err => {
-                    console.error('복사 실패:', err);
-                });
-            });
-        });  
+
+            if (!time || isNaN(time) || time <= 0) {
+                alert("하루 학습 시간을 올바르게 입력하세요. (1 이상 숫자)");
+                timeInput.focus();
+                e.preventDefault();
+                return;
+            }
+        });
     </script>
+
     </body>
 </html>
