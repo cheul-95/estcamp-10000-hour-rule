@@ -118,9 +118,9 @@
             const time = params.get('time'); 
             
             // 입력값 유효성 검사
-            if(!job || job.trim() === ""){
+            if(job.trim() === ""){
                 alert("어떤 전문가가 되고 싶은지 입력하세요");
-            }else if (!time || isNaN(time) || time <= 0){
+            }else if (isNaN(time) || time <= 0){
                 alert("하루 학습 시간을 입력하세요");
             } else {
                 document.querySelector(".job-value").textContent=job;
