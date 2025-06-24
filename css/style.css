@@ -17,13 +17,13 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'GmarketSans';
+    font-family: 'GmarketSansMedium', sans-serif;
     src: url('../font/GmarketSansTTFMedium.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'GmarketSans';
+    font-family: 'GmarketSansBold', sans-serif;
     src: url('../font/GmarketSansTTFBold.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
@@ -35,6 +35,7 @@
     --preferred-font36-vw: calc((36 / 1280) * 100vw);
     --preferred-font72-vw: calc((72 / 1280) * 100vw);
     --preferred-font96-vw: calc((96 / 1280) * 100vw);
+    --yellow-btn-color: #FCEE21;
 }
 .sr-only {
     position: absolute;
@@ -61,6 +62,10 @@ body{
 main{
     width: 100%;
 }
+.button-style{
+    border-radius: 12px;
+    padding : 20px 50px;
+}
 /* 헤더 영역 START */
 header{
     margin-top: 120px;
@@ -78,36 +83,35 @@ header img{
 }
 .quote--primary .quote__text{
     font-family: 'OTEnjoystoriesBA';
+    color: #F5DF4D;
     font-size: clamp(22px, var(--preferred-font36-vw) , 36px);
     font-weight: 700;
-    color: #F5DF4D;
+    line-height: 100%;
 }
 /* quote--secondary 영역*/
 .quote--secondary{
-    margin-top: 80px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    font-weight: 400;
-    font-size: 18px;
-    font-size: clamp(14px, var(--preferred-font18-vw), 18px);
-    font-family: 'GmarketSans',sans-serif;
-    line-height: calc(100% + 13px);
-    color: #FFFFFF;
     text-align: center;
+    margin-top: 80px;
+    font-family: 'GmarketSansMedium';
+    color: #FFFFFF;
+    font-size: clamp(14px, var(--preferred-font18-vw), 18px);
+    font-weight: 400;
+    line-height: calc(100% + 13px);
 }
 .quote--secondary strong{
-    font-weight: 500;
+    font-family: 'GmarketSansBold';
     font-size: clamp(14px, var(--preferred-font24-vw), 24px);
-    font-family: 'GmarketSans',sans-serif;
+    font-weight: 500;
 }
 .quote--secondary .quote__content{
+    position: relative;
+    height: 85px;
     font-weight: 400;
     font-family: 'GmarketSans',sans-serif;
-}
-.quote__content {
-    position: relative;
+    line-height: 160%;
 }
 .quote__content::before,.quote__content::after{
     content: "";
@@ -117,25 +121,15 @@ header img{
     position: absolute;
 }
 .quote__content::after{
-    background: url("../img/”.png") no-repeat;
+    background: url("../img/quotes-right.png") no-repeat;
     bottom : 32px;
     right: -56px;
 }
 .quote__content::before{
-    background: url("../img/“.png") no-repeat;
+    background: url("../img/quotes-left.png") no-repeat;
     top : 32px;
     transform: translateY(-50%);
     left: -56px;
-}
-.quote--secondary img:first-child{
-    width: 36px;
-    height: 32px;
-    margin-right: 20px;
-}
-.quote--secondary img:last-child{
-    width: 36px;
-    height: 32px;
-    margin-left: 20px;
 }
 /* input 영역 */
 .input{
@@ -143,22 +137,22 @@ header img{
     text-align: center;
     color: #FFFFFF;
 }
-.input .input__group{
-    display: block;
+.input .input__group:nth-child(2){
     margin-bottom: 20px;
+}
+.input .input__group{
+    font-family: 'GmarketSansMedium';
     font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
-    font-family: 'GmarketSans',sans-serif;
     font-weight: 400;
 }
 .input .input__group input{
     width: 228px;
     font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
-    font-family: 'GmarketSans',sans-serif;
+    font-family: 'GmarketSansMedium';
     font-weight: 400;
     height: calc(24px + 16px + 16px);
     border-radius: 8px;
     border: none;
-    outline: none;
     padding: 16px 40px 16px;
     margin: 0px 20px;
 }
@@ -170,49 +164,53 @@ header img{
     position: relative;
 }
 .input form .input__submit-wrap > button{
-    margin-top: 120px;
-    max-width: 567px;
     height: 64px;
-    border-radius: 12px;
-    padding: 20px 50px;
-    background: #FCEE21;
-    font-family: 'GmarketSans',sans-serif;
-    font-weight: 500;
+    max-width: 567px;
+    margin-top: 120px;
+    background: var(--yellow-btn-color);
+    font-family: 'GmarketSansBold';
     font-size:  clamp(14px ,var(--preferred-font24-vw), 24px);
+    font-weight: 500;
     line-height: 100%;
     text-align: center;
     vertical-align: middle;
     color: #5B2386;
-    border: none;
 }
 .input__submit-wrap::after {
     content: "";
-    position: absolute;
-    top:134px;
     width: 64px;
     height: 72px;
+    position: absolute;
+    top:134px;
     margin-left: 7px;
-    background: url("../img/Frame 21.png") no-repeat center / cover;
+    background: url("../img/click-icon.png") no-repeat center / cover;
 }
 /* result 영역 */
 .result{
     margin-top: 142px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.result__text:nth-child(2){
+    margin-bottom: 20px;
 }
 .result__text{
-    font-family: 'GmarketSans',sans-serif;
+    font-family: 'GmarketSansMedium';
     font-size: clamp(12px,var(--preferred-font24-vw), 24px);
     font-weight: 400;
     color: #FFFFFF;
-    text-align: center;
-    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .result__text strong{
-    display: inline-flex;
-    align-items: center;
     font-size: clamp(24px,var(--preferred-font72-vw),72px );
     font-weight: 500;
     vertical-align: -webkit-baseline-middle;
     margin: 0 12px;
+    line-height: 100%;
 }
 .result__buttons{
     margin-top: 120px;
@@ -224,8 +222,6 @@ header img{
     box-shadow: 2px 4px 10px 0px #00000026;
     max-width: 365px;
     height: 64px;
-    border-radius: 12px;
-    padding : 20px 50px;
     margin-right: 12px; 
     font-family: 'GmarketSans',sans-serif;
     font-weight: 500;
@@ -240,8 +236,6 @@ header img{
     box-shadow: 2px 4px 10px 0px #00000026;
     max-width: 193px;
     height: 64px;
-    border-radius: 12px;
-    padding : 20px 50px;
     font-family: 'GmarketSans',sans-serif;
     font-weight: 500;
     font-size: clamp(14px,var(--preferred-font24-vw),24px);
@@ -267,8 +261,8 @@ header img{
 }
 /* dialog 영역 */
 .modal {
-    position: absolute;
-    top:100px;
+    position: fixed;
+    top:calc(50% - 408px);
     left: calc(50% - 400px);
     width : 80%; 
     max-width: 800px;
@@ -304,7 +298,8 @@ header img{
     height: 342px;
     margin-top: 40px;
 } 
-.modal button {
+.modal a {
+    display: block;
     width: 508px;
     height: 64px;
     border-radius: 12px;
@@ -315,6 +310,7 @@ header img{
     font-size: 24px;
     color: #5b2386;
     box-shadow: 2px 4px 10px 0 #00000026;
+    line-height: 100%;
 }
 @media screen and (max-width : 1000px){
     .modal div{
@@ -344,11 +340,11 @@ header img{
         height: 18px;
     }
     .quote__content::after{
-        background: url("../img/”-m.png") no-repeat;
+        background: url("../img/quotes-right-m.png") no-repeat;
         right: -20px;
     }
     .quote__content::before{
-        background: url("../img/“-m.png") no-repeat;
+        background: url("../img/quotes-left-m.png") no-repeat;
         left: -20px;
         top : 36px;
     }
@@ -457,7 +453,7 @@ header img{
         height: 188px;
         margin-top: 24px;
     }
-    .modal button {
+    .modal a {
         font-family: 'GmarketSans',sans-serif;
         font-weight: 500;
         font-size: 14px;

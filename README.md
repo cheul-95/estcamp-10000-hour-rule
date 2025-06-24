@@ -1,3 +1,4 @@
+
 # 📘 1만 시간의 법칙 계산기
 
 > **"연습은 어제의 당신보다 당신을 더 낫게 만든다."**  
@@ -13,7 +14,10 @@
 
 ## 🧩 기술 스택
 
-- HTML5 + CSS3 + JS
+- **HTML5**: 시맨틱 마크업 기반 구조 설계  
+- **CSS3**: 모바일 퍼스트 반응형 디자인  
+- **BEM**: 유지보수를 고려한 CSS 네이밍 컨벤션 적용  
+- **미디어쿼리**: 다양한 해상도 대응을 위한 레이아웃 구현
 
 ---
 
@@ -41,95 +45,46 @@
 ```
 estcamp-10000-hour-rule/
 ├── css/
-│ ├── reset.css # 브라우저 스타일 초기화
-│ └── style.css # 페이지 스타일 정의
-├── font/ # 모든 폰트 리소스
-├── img/ # 모든 이미지 리소스
-├── index.html # 메인 HTML 페이지
-└── README.md # 프로젝트 설명 문서
+│   ├── reset.css         # 브라우저 스타일 초기화
+│   └── style.css         # 페이지 스타일 정의
+├── font/                 # 폰트 리소스
+├── img/                  # 이미지 리소스
+├── index.html            # 메인 HTML 페이지
+└── README.md             # 프로젝트 설명 문서
 ```
 
 ---
 
-## 🔍 시맨틱 마크업 구조 및 특징
+##  ✨ 주요 기능
 
-<table>
-  <thead>
-    <tr>
-      <th>태그</th>
-      <th>적용 예시</th>
-      <th>장점</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code></td>
-      <td>페이지 기본 구조 분리</td>
-      <td>스크린 리더, SEO 최적화</td>
-    </tr>
-    <tr>
-      <td><code>&lt;section&gt;</code></td>
-      <td>quote / input / result / modal</td>
-      <td>정보 블록 논리적 구획</td>
-    </tr>
-    <tr>
-      <td><code>&lt;blockquote&gt;</code></td>
-      <td>인용문 처리</td>
-      <td>의미성과 가독성이 향상</td>
-    </tr>
-    <tr>
-      <td><code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code></td>
-      <td>입력 그룹 구분</td>
-      <td>확장성을 고려한 그룹화</td>
-    </tr>
-    <tr>
-      <td><code>&lt;picture&gt;</code>, <code>&lt;source&gt;</code></td>
-      <td>반응형 이미지 처리</td>
-      <td>다양한 해상도 대응</td>
-    </tr>
-    <tr>
-      <td><code>&lt;clamp&gt;</code></td>
-      <td>clamp( 최솟값 , calc((최댓값 / 화면크기) * 100vw),최댓값)</td>
-      <td>반응형 폰트 사이즈 대응</td>
-    </tr>
-    <tr>
-      <td><code>&lt;small&gt;</code></td>
-      <td>부가적인 법적 안내</td>
-      <td>부가적인 설명임을 명확히 표현</td>
-    </tr>
-    </tbody>
-</table>
+- ⏰ 1만 시간 계산기 기능 (하루 훈련 시간 기반 일수 계산)
+- 📱 반응형 웹 구현 (모바일 중심 설계)
+- 🎯 모달 팝업 UI 구현
+- ♿ 웹 접근성 요소 고려 (`aria-label`, 시맨틱 태그 사용 등)
+- 🔍 SEO 최적화 (메타 태그, 시멘틱 구조)
 
 ---
 
-## 📌 주요 특징
+## 📌 개발 중 어려웠던 점
 
-✅ HTML + CSS + JS 
+✅ CSS 네이밍: BEM(Block Element Modifier) 방식 적용
 
-✅ 다이얼로그(모달) 기능
+처음으로 BEM(Block Element Modifier) 방식을 도입해 보았습니다.  
+초반에는 어떤 네이밍이 적절할지 고민이 많았지만, 익숙해질수록 클래스 이름만 보고도 구조를 파악할 수 있어 가독성과 유지보수에 큰 도움이 되었습니다.
 
-✅ 반응형 디자인
-  - Desktop: max-width: 1280px
-  - Mobile: max-width: 720px
-    
-✅ 접근성 향상 요소
-  - label, aria-label, alt, aria-hidden 등을 적절히 활용
-  
-✅ 검색엔진 최적화(SEO)
-  - meta 태그: description, keywords, author 설정
+✅ 웹 접근성 고려
 
-✅ CSS 네이밍 방식
-  - BEM(Block Element Modifier) 방식 적용
-  - 유지보수성과 코드 가독성 개선 
+웹 접근성 이론을 어느 정도 학습한 후 시작했지만, 실제 코드에 어떻게 반영해야 할지는 여전히 고민이 많았습니다.  
+`aria-*`, `role`, 시맨틱 태그의 올바른 사용을 위해 [MDN 문서](https://developer.mozilla.org/ko/)와 AI의 도움을 함께 참고하였습니다.
 
 ---
 
 ## 📝 피드백 반영 사항
 
-- h1의 img alt값 : 텍스트 이미지이거나 로고와 같이 기업, 브랜드 자체를 표현하는 경우에는 '로고'라는 텍스트는 생략 ( 반영 완료 )
-- 크게 의미가 있지 않은 꾸밈을 위한 이미지는 태그를 사용하기 보다는 가상 요소 또는 background를 사용해서 css로 처리 ( 반영 완료 )
-- 모달 width를 800px로 설정 - width calc(100% - (여백)), max-width 800px로 하는게 화면 너비에 유연하게 반응예상 ( 반영 완료 )
-- 5시간 부분에 숫자만 입력되게 할 것 같습니다. ( 반영 완료 )
+- `img` 태그의 `alt` 속성: 로고일 경우 `alt=""`로 처리하여 스크린리더에서 제외
+- 장식용 이미지는 `background`나 `::before` 가상 요소로 처리
+- `dialog` 요소의 `max-width`, 내부 여백 조정으로 모달 시각적 개선
+- 입력창은 `type="number"` 속성을 통해 숫자만 입력 가능하도록 설정
 
 ---
 
@@ -137,4 +92,3 @@ estcamp-10000-hour-rule/
 
 - SC LEE  
 - GitHub: [@cheul-95](https://github.com/cheul-95)
-
